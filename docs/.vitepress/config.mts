@@ -10,10 +10,16 @@ export default defineConfig({
       { text: 'Guide', link: '/guide'}
     ],
 
-    search: {
+
+//search bar
+ search: {
       provider: 'local'
     }, 
-    
+
+
+
+
+
     
     //sidebar stuff
      sidebar: [
@@ -34,6 +40,8 @@ export default defineConfig({
         text: 'Tuning'
       }
     ]
+
   }
+  
 
 })
