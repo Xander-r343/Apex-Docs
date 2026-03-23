@@ -1,4 +1,8 @@
-
+---
+next:
+  text: 'Guide'
+  link: '/guide/installation'
+---
 
 # Our Story { .gradient-title-page }
 
