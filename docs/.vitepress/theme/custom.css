@@ -4,31 +4,21 @@
   /* SEAMLESS UNIDIRECTIONAL GRADIENT */
   background: linear-gradient(
     120deg, 
-    #00a8cc 0%,   /* Dimmer Cyan Start */
-    #7B61FF 25%,  /* Purple */
-    #C21BFF 50%,  /* Magenta */
-    #00a8cc 100%  /* Dimmer Cyan End (Matches 0%) */
-  ) !important;
+    #00D2FF 0%,   /* Start: Cyan */
+    #7B61FF 25%,  /* Transition: Blue/Purple */
+    #C21BFF 50%,  /* Middle: Magenta */
+    #7B61FF 75%,  /* Transition back */
+    #00D2FF 100%  /* End: Cyan (Match the start!) */
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 4s linear infinite;
   
-  /* 200% width allows the 'ribbon' to slide through fully */
-  background-size: 200% auto !important;
-  
-  /* Clipping the background to the text */
-  -webkit-background-clip: text !important;
-  background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  
-  /* 6s Linear for a constant, smooth, one-way flow */
-  animation: supernova-slide 6s linear infinite !important;
-  
-  /* Ensures the gradient renders correctly in all browsers */
   display: inline-block;
 }
 
 @keyframes supernova-slide {
-  from {
-    background-position: 0% center;
-  }
   to {
     background-position: 200% center;
   }
