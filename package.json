@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "vitepress": "latest",
-    "vue": "latest"
+    "vue": "latest",
+    "typescript": "latest"
   }
 }
