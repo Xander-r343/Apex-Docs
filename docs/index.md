@@ -1,6 +1,6 @@
-# TEST!! TEST!!
-ITS WORKING
+---
+layout: home
 
-::: info
-INFO TEST!!
-:::
+hero:
+  name: "Apex"
+  text: "Pathing"
