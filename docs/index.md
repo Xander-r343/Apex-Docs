@@ -73,7 +73,8 @@ hero:
 ::: tabs variant:code
 == Kotlin
 
-test test
+An example of a path written in kotlin using ApexPathing:
+Quick, Concise, and Easy-to-use
 
 ```kotlin
 val path = follower.pathBuilder()
@@ -96,6 +97,9 @@ follower.followPath(path);
 ```
 
 == Java
+
+An example of a path written in java using ApexPathing:
+Quick, Concise, and Easy-to-use
       
 ```java
 Path path = follower.pathBuilder()
