@@ -1,5 +1,5 @@
 import DefaultTheme from 'vitepress/theme'
-import CustomNavButton from './CustomNavButton.vue'
+import CustomNavButton from './components/CustomNavButton.vue'
 import './custom.css'
 import { h } from 'vue'
 import CodeBlock from ./components/CodeBlock.vue'
