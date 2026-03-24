@@ -1,27 +1,12 @@
 <template>
-  <div class="custom-code-block-wrapper" ref="wrapper">
-    <div v-if="description" class="code-description" ref="desc" v-html="description"></div>
+  <div class="custom-code-block-wrapper">
     <slot></slot>
+    <div v-if="description" class="code-description" v-html="description"></div>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
 defineProps(['description'])
-
-const wrapper = ref(null)
-const desc = ref(null)
-
-onMounted(() => {
-  if (wrapper.ref && desc.value) {
-    // Find the VitePress tab bar
-    const tabs = wrapper.value.querySelector('.tabs')
-    if (tabs) {
-      // Insert our description immediately after the tabs
-      tabs.after(desc.value)
-    }
-  }
-})
 </script>
 
 <style scoped>
@@ -31,10 +16,23 @@ onMounted(() => {
   border-radius: 8px;
   overflow: hidden;
   background-color: var(--vp-code-block-bg);
+  display: grid; /* Establish grid on the wrapper */
 }
 
-/* Style the description area */
+/* 1. Target the internal group and make it a grid */
+:deep(.vp-code-group) {
+  display: grid !important;
+  margin: 0 !important;
+}
+
+/* 2. Assign the Rows */
+:deep(.tabs) {
+  grid-row: 1; /* Tabs at the very top */
+  border-bottom: 1px solid var(--vp-c-divider) !important;
+}
+
 .code-description {
+  grid-row: 2; /* Description right under tabs */
   padding: 12px 16px;
   font-size: 0.9em;
   color: var(--vp-c-text-1);
@@ -43,27 +41,18 @@ onMounted(() => {
   line-height: 1.5;
 }
 
-/* Ensure the tab bar looks integrated */
-:deep(.tabs) {
-  margin-bottom: 0 !important;
-  border-bottom: 1px solid var(--vp-c-divider) !important;
-}
-
-/* Remove default VitePress margins */
-:deep(.vp-code-group) {
-  margin: 0 !important;
-}
-
 :deep(div[class*='language-']) {
+  grid-row: 3; /* Code block at the bottom */
   margin: 0 !important;
   border-radius: 0 !important;
 }
 
-/* The 'pill' look for code inside the description */
+/* 3. Styling for code pills in the description */
 :deep(.code-description code) {
   background-color: var(--vp-c-bg-mute);
   padding: 2px 4px;
   border-radius: 4px;
   font-size: 0.9em;
+  font-family: var(--vp-font-family-mono);
 }
 </style>
