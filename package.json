@@ -9,7 +9,7 @@
   "devDependencies": {
     "typescript": "latest",
     "vitepress": "^1.6.4",
-    "vue": "latest"
+    "vue": "latest",
     "markdown-it-container": "^4.0.0"
   }
 }
