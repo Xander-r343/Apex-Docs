@@ -70,10 +70,12 @@ hero:
 <div id="right-side">
 <div id="contain">
 
-::: card
+::: tabs variant:code
+== Kotlin
 
-::: code-group
-```kotlin [Kotlin]
+test test
+
+```kotlin
 val path = follower.pathBuilder()
     .addPath(
         BezierLine(scorePose, pickupPose)
@@ -92,8 +94,10 @@ val path = follower.pathBuilder()
     .build()
 follower.followPath(path);
 ```
+
+== Java
       
-```java [Java]
+```java
 Path path = follower.pathBuilder()
     .addPath(
         new BezierLine(scorePose, pickupPose)
